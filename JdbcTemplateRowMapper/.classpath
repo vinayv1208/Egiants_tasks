@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.aop-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.asm-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.aspects-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.beans-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.context-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.context.support-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.core-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.expression-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.instrument-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.instrument.tomcat-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.jdbc-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.jms-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.orm-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.oxm-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.test-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.transaction-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.web-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.web.portlet-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.web.servlet-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/d/spring-framework-3.0.1.RELEASE-A/dist/org.springframework.web.struts-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/springjar/com.springsource.org.apache.commons.logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/springjar/com.springsource.org.apache.log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/springjar/jmxtools-1.2.1.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/springjar/org.springframework.asm-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/springjar/org.springframework.beans-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/springjar/org.springframework.context-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/springjar/org.springframework.core-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="D:/ravi/springjars/springjar/org.springframework.expression-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="C:/oraclexe/app/oracle/product/10.2.0/server/jdbc/lib/ojdbc14.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
