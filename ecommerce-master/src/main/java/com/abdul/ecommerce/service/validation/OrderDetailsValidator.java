@@ -1,0 +1,7 @@
+package com.abdul.ecommerce.service.validation;
+
+/**
+ * Created by abdul on 9/11/17.
+ */
+public class OrderDetailsValidator {
+}
