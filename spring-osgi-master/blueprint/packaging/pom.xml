@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.springframework.osgi.blueprint.ri</groupId>
+  <version>2.0.0.M2-SNAPSHOT</version>
+  <artifactId>uber</artifactId>
+  <packaging>jar</packaging>
+  <name>Spring OSGi Blueprint RI: Uber Bundle</name>
+  <url>http://www.springframework.org/osgi</url>
+  
+  <description>
+    Spring/OSGi Blueprint Uber Bundle.
+  </description>
+
+
+  <properties>
+    <!-- Spring version -->
+    <spring.maven.artifact.version>3.0.0.BUILD-SNAPSHOT</spring.maven.artifact.version>
+    <spring.base.version>3.0.0</spring.base.version>
+
+	
+    <!--- Spring OSGi packages imported version (respect the OSGi naming pattern)-->
+    <spring.osgi.import.version>2.0.0.M1</spring.osgi.import.version>
+    
+    <!--- Spring OSGi packages exported version -->
+    <spring.osgi.export.version>2.0.0.M1</spring.osgi.export.version>
+    <spring.osgi.bundle.version>2.0.0.M1</spring.osgi.bundle.version>
+
+    <spring.osgi.symbolic.name>
+        org.springframework.osgi.blueprint.uber
+    </spring.osgi.symbolic.name>
+
+	<spring.osgi.license.loc>../..</spring.osgi.license.loc>
+
+    <javadoc.loc>${basedir}/../../../docs/src/javadoc</javadoc.loc>
+
+    <!-- other properties -->
+    <slf4j.version>1.5.6</slf4j.version>
+    <clover.skip>true</clover.skip>
+  </properties>
+  
+  <!-- shared dependencies -->
+  <dependencies>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>com.springsource.slf4j.org.apache.commons.logging</artifactId>
+          <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>com.springsource.slf4j.api</artifactId>
+          <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>com.springsource.slf4j.log4j</artifactId>
+          <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+          <groupId>org.apache.log4j</groupId>
+          <artifactId>com.springsource.org.apache.log4j</artifactId>
+          <version>1.2.15</version>
+        </dependency>
+
+        <dependency>  
+            <groupId>net.sourceforge.cglib</groupId>
+            <artifactId>com.springsource.net.sf.cglib</artifactId>  
+            <version>2.2.0</version>
+        </dependency>
+       
+        <dependency>
+            <groupId>org.springframework.osgi</groupId>
+            <artifactId>spring-osgi-core</artifactId>
+            <version>${pom.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.osgi</groupId>
+            <artifactId>spring-osgi-extender</artifactId>
+            <version>${pom.version}</version>            
+
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.osgi</groupId>
+            <artifactId>spring-osgi-io</artifactId>
+            <version>${pom.version}</version>            
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>org.springframework.test</artifactId>
+            <version>${spring.maven.artifact.version}</version>            
+        </dependency>
+                
+        <dependency>
+            <groupId>org.junit</groupId>
+            <artifactId>com.springsource.org.junit</artifactId>
+            <version>4.5.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.osgi.compendium</artifactId>
+            <version>1.0.1</version>
+            <scope>provided</scope>
+        </dependency>        
+  </dependencies>
+
+  	<build>
+  	
+        <extensions>
+          <extension>
+             <groupId>org.springframework.build.aws</groupId>
+             <artifactId> org.springframework.build.aws.maven</artifactId>
+             <version>2.0.0.RELEASE</version>
+          </extension>
+        </extensions>
+      	
+		<plugins>
+		
+          <!-- clover plug-in 
+            <plugin>
+                <groupId>com.atlassian.maven.plugins</groupId>
+                <artifactId>maven-clover2-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <licenseLocation>${env.clover.licenseLocation}</licenseLocation>
+                    <skip>true</skip>
+                </configuration>
+            </plugin> 
+          	-->	
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2-beta-3</version>
+				<inherited>false</inherited>
+				<executions>
+					<execution>
+						<id>uber-jar</id>
+						<phase>package</phase>
+						<goals><goal>single</goal></goals>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<descriptors>
+								<descriptor>src/assembly/uber.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+                </executions>					
+			</plugin>
+			
+            <plugin>
+                <groupId>com.springsource.bundlor</groupId>
+                <artifactId>com.springsource.bundlor.maven</artifactId>
+                <version>1.0.0.M6</version>
+                <inherited>false</inherited>
+                <executions>
+                  <execution>
+                    <id>bundlor-uber</id>
+                    <phase>package</phase>
+                    <goals>
+                       <goal>transform</goal>
+                    </goals>
+                  </execution>
+                </executions>
+                <configuration>
+                    <manifestTemplatePath>${basedir}/template.mf</manifestTemplatePath>
+                    <manifestHeaders><![CDATA[Bundle-Name: ${pom.artifactId}
+Bundle-Version: ${spring.osgi.bundle.version}
+Bundle-SymbolicName: ${spring.osgi.symbolic.name}
+Bundle-Vendor: SpringSource
+Bundle-DocURL: http://www.springframework.org/osgi
+Bundle-Description: ${pom.description}
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0
+Bundle-ManifestVersion: 2
+Implementation-Title: Spring Dynamic Modules Framework
+Implementation-Version: ${pom.version}
+Implementation-Vendor: SpringSource
+Implementation-Vendor-Id: org.springframework.osgi
+Spring-DM-Version: ${pom.version}
+Spring-Version: ${spring.maven.artifact.version}
+Build-Plan: ${env.buildPlan}
+Build-Number: ${env.buildNumber}
+SVN-Revision: ${env.svnRevision}
+Ignored-Existing-Headers: 
+ Ant-Version,
+ Archiver-Version,
+ Unversioned-Imports,
+ Tool,
+ Ignore-Package,
+ Private-Package,
+ Created-By,
+ Bnd-LastModified,
+ Import-Package
+Export-Package: 
+ org.osgi.service.blueprint.container;version=1.0,
+ org.osgi.service.blueprint.reflect;version=1.0,
+ org.springframework.beans;version=${spring.base.version},
+ org.springframework.beans.factory;version=${spring.base.version},
+ org.springframework.beans.factory.config;version=${spring.base.version},
+ org.springframework.beans.factory.support;version=${spring.base.version},
+ org.springframework.beans.factory.xml;version=${spring.base.version},
+ org.springframework.context;version=${spring.base.version},
+ org.springframework.core;version=${spring.base.version},
+ org.springframework.core.io;version=${spring.base.version},
+ org.springframework.core.io.support;version=${spring.base.version},
+ org.springframework.osgi.context;version=${spring.osgi.import.version},
+ org.springframework.osgi.context.support;version=${spring.osgi.import.version},
+ org.springframework.osgi.io;version=${spring.osgi.import.version},
+ org.springframework.osgi.util;version=${spring.osgi.import.version},
+ org.springframework.test;version=${spring.base.version},
+ org.springframework.util;version=${spring.base.version},
+ org.springframework.util.xml;version=${spring.base.version}
+]]>
+                    </manifestHeaders>
+                    <packagings>
+                       <packaging>jar</packaging>
+                    </packagings>
+                    <failOnWarnings>false</failOnWarnings>
+                    <removeNullHeaders>true</removeNullHeaders>
+                </configuration>
+          </plugin>			
+		</plugins>
+	</build>  
+
+
+    <distributionManagement>
+        <downloadUrl>http://www.springframework.org/osgi/</downloadUrl>
+        <site>
+            <id>static.springframework.org</id>
+            <name>SpringFramework.org</name>
+            <url>scp://static.springframework.org/var/www/domains/springframework.org/static/htdocs/spring-osgi/snapshot-site/</url>
+        </site>
+        <repository>
+            <id>spring-milestone</id>
+            <name>Spring Milestone Repository</name>
+            <url>s3://maven.springframework.org/milestone</url>
+        </repository>    
+        <snapshotRepository>
+            <id>spring-snapshot</id>
+            <name>Spring Snapshot Repository</name>
+            <url>s3://maven.springframework.org/snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
+    
+    <repositories>
+        <repository>
+        <id>spring-milestone</id>
+        <name>Spring Portfolio Milestone Repository</name>
+        <url>http://maven.springframework.org/milestone</url>
+        </repository>
+    </repositories>
+</project>
