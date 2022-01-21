@@ -76,7 +76,7 @@
     "karma-spec-reporter": "^0.0.32",
     "load-grunt-tasks": "^3.5.0",
     "lodash": "~2.4.1",
-    "log4js": "^0.6.27",
+    "log4js": "^6.4.0",
     "lunr": "^0.7.2",
     "marked": "~0.3.0",
     "node-html-encoder": "0.0.2",
