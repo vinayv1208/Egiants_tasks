@@ -62,7 +62,7 @@
     "jquery": "3.4.0",
     "jquery-2.1": "npm:jquery@2.1.4",
     "jquery-2.2": "npm:jquery@2.2.4",
-    "karma": "^3.1.4",
+    "karma": "^6.3.16",
     "karma-browserstack-launcher": "^1.3.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-edge-launcher": "^0.4.2",
